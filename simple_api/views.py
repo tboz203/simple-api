@@ -1,12 +1,12 @@
 """View definitions for Simple-API."""
 
 from django.http import HttpRequest
-from ninja import NinjaAPI
 
 from . import schemas
+from .api_manager import ApiManager
 from .models import Class, Person
 
-api = NinjaAPI()
+api = ApiManager()
 
 
 @api.get("/classes/", response=list[schemas.ClassTeacherSchema])
