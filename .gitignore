@@ -1,0 +1,21 @@
+# ignore hidden files
+.*
+
+# ... with specific exclusions
+!.gitignore
+!.python-version
+
+# misc clutter
+*.log
+
+# python clutter
+__pycache__
+build
+dist
+wheels
+*.egg-info
+*.py[cod]
+
+# django clutter
+db.sqlite3
+db.sqlite3-journal
