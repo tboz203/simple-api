@@ -19,9 +19,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 _pyproject_path = BASE_DIR / "pyproject.toml"
 _pyproject = tomllib.loads(_pyproject_path.read_text()) if _pyproject_path.exists() else {}
 
-APP_NAME = 'Simple-API'
-APP_VERSION = _pyproject.get('project', {}).get('version', '0.0.0')
-APP_DESCRIPTION = _pyproject.get('project', {}).get('description', None)
+APP_NAME = "Simple-API"
+APP_VERSION = _pyproject.get("project", {}).get("version", "0.0.0")
+APP_DESCRIPTION = _pyproject.get("project", {}).get("description", None)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
     "simple_api",
 ]
 

@@ -1,11 +1,16 @@
 """URL configuration for Simple-API."""
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+from rest_framework.routers import DefaultRouter
 
-from .views import api
+from . import views
+
+router = DefaultRouter()
+router.register("classes", views.ClassViewSet)
+router.register("teachers", views.TeacherViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", api.urls),
+    path("", include(router.urls)),
 ]
