@@ -1,12 +1,13 @@
 [project]
 name = "simple_api"
 readme = "README.md"
-version = "0.0.1"
-description = "A simple REST api for teachers, students, and classes built using Django Ninja."
+version = "0.0.2"
+description = "A simple REST api for teachers, students, and classes built using Django REST Framework."
 requires-python = ">=3.13"
 dependencies = [
     "django~=5.1",
     "djangorestframework>=3.15.2",
+    "drf-spectacular>=0.28.0",
 ]
 
 [dependency-groups]
