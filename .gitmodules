@@ -1,0 +1,6 @@
+[submodule "vendor/graphene"]
+	path = vendor/graphene
+	url = https://github.com/graphql-python/graphene.git
+[submodule "vendor/graphene-django"]
+	path = vendor/graphene-django
+	url = https://github.com/graphql-python/graphene-django.git

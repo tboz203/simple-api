@@ -19,9 +19,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 _pyproject_path = BASE_DIR / "pyproject.toml"
 _pyproject = tomllib.loads(_pyproject_path.read_text()) if _pyproject_path.exists() else {}
 
-APP_NAME = 'Simple-API'
-APP_VERSION = _pyproject.get('project', {}).get('version', '0.0.0')
-APP_DESCRIPTION = _pyproject.get('project', {}).get('description', None)
+APP_NAME = "Simple-API"
+APP_VERSION = _pyproject.get("project", {}).get("version", "0.0.0")
+APP_DESCRIPTION = _pyproject.get("project", {}).get("description", None)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -34,7 +34,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -44,6 +43,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "graphene_django",
+    "django_filters",
     "simple_api",
 ]
 
@@ -129,3 +130,43 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# ------------------------------------------------------------------------------
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "style": "{",
+            "format": "[{levelname:8} {asctime} {name}] {message}",
+        },
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
+        },
+    },
+    "loggers": {
+        "asyncio": {
+            "level": "INFO",
+        },
+        "django": {
+            "level": "NOTSET",
+        },
+        "django.utils.autoreload": {
+            "level": "INFO",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "DEBUG" if DEBUG else "INFO",
+    },
+}
+
+# ------------------------------------------------------------------------------
+
+GRAPHENE = {
+    "SCHEMA": "simple_api.schema.schema",
+}

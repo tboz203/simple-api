@@ -1,3 +1,3 @@
 # Simple-API
 
-A simple REST API for teachers, students, and classes built using Django Ninja.
+A simple REST api for teachers, students, and classes built using Django and Graphene.
