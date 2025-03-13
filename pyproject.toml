@@ -2,12 +2,20 @@
 name = "simple_api"
 readme = "README.md"
 version = "0.0.1"
-description = "A simple REST api for teachers, students, and classes built using Django and Graphene."
+description = "A simple GraphQL api for teachers, students, and classes built using Django and Strawberry."
 requires-python = ">=3.13"
-dependencies = ["django~=5.1", "django-filter~=25.1", "graphene-django~=3.2"]
+dependencies = [
+    "django~=5.1",
+    "django-filter~=25.1",
+    "strawberry-graphql~=0.262",
+    "strawberry-graphql-django~=0.57",
+]
 
 [dependency-groups]
-dev = ["django-types~=0.20", "ipython~=9.0"]
+dev = [
+    "django-types~=0.20",
+    "ipython~=9.0",
+]
 
 [tool.ruff]
 line-length = 119

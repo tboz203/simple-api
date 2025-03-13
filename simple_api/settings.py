@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "graphene_django",
     "django_filters",
     "simple_api",
 ]
@@ -167,6 +166,7 @@ LOGGING = {
 
 # ------------------------------------------------------------------------------
 
-GRAPHENE = {
-    "SCHEMA": "simple_api.schema.schema",
+STRAWBERRY_DJANGO = {
+    "FIELD_DESCRIPTION_FROM_HELP_TEXT": True,
+    "TYPE_DESCRIPTION_FROM_MODEL_DOCSTRING": True,
 }
