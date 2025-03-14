@@ -5,6 +5,8 @@ This module contains a `Person` model (for modeling students and teachers), as
 well as a `Class` model.
 """
 
+from functools import cached_property
+
 from django.db import models
 
 
@@ -14,11 +16,18 @@ class Person(models.Model):
     name = models.CharField(unique=True, max_length=64)
     phone = models.CharField(max_length=64)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
 
     class Meta:
         verbose_name_plural = "People"
+
+
+class _ClassManager(models.Manager):
+    def get_queryset(self):
+        return (
+            super().get_queryset().annotate(current_capacity=models.F("maximum_capacity") - models.Count("students"))
+        )
 
 
 class Class(models.Model):
@@ -29,12 +38,14 @@ class Class(models.Model):
     students = models.ManyToManyField(Person, related_name="classes_attending")
     maximum_capacity = models.PositiveIntegerField(default=30)
 
-    def __str__(self):
+    objects = _ClassManager()
+
+    def __str__(self) -> str:
         return self.name
 
     class Meta:
         verbose_name_plural = "Classes"
 
-    @property
-    def current_capacity(self):
+    @cached_property
+    def current_capacity(self) -> int:
         return self.maximum_capacity - self.students.count()

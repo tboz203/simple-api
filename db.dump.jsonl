@@ -1,0 +1,13 @@
+{"model": "simple_api.person","pk": 1,"fields": {"name": "Bob Smith","phone": "555-0123"}}
+{"model": "simple_api.person","pk": 2,"fields": {"name": "Jane Doe","phone": "555-5555"}}
+{"model": "simple_api.person","pk": 3,"fields": {"name": "John Cena","phone": "123-4567"}}
+{"model": "simple_api.person","pk": 4,"fields": {"name": "Peter Parkour","phone": "666-1337"}}
+{"model": "simple_api.person","pk": 5,"fields": {"name": "Anthony Stork","phone": "a phone number can be anything"}}
+{"model": "simple_api.person","pk": 6,"fields": {"name": "The Who","phone": "Also the who"}}
+{"model": "simple_api.person","pk": 7,"fields": {"name": "Norm Norman","phone": "999-9999"}}
+{"model": "simple_api.person","pk": 8,"fields": {"name": "Useless McNobody","phone": ":frown:"}}
+{"model": "simple_api.class","pk": 1,"fields": {"name": "CS 105: Intro to Classes","teacher": 7,"maximum_capacity": 10,"students": [2,3,4,6,7]}}
+{"model": "simple_api.class","pk": 2,"fields": {"name": "Math 101","teacher": 1,"maximum_capacity": 30,"students": [2,3,4]}}
+{"model": "simple_api.class","pk": 3,"fields": {"name": "Bob Smith","teacher": 1,"maximum_capacity": 1,"students": [1]}}
+{"model": "simple_api.class","pk": 4,"fields": {"name": "Music 099","teacher": 6,"maximum_capacity": 999,"students": [2,4,5,6,7]}}
+{"model": "simple_api.class","pk": 5,"fields": {"name": "Robotics 301","teacher": 5,"maximum_capacity": 30,"students": [4,7]}}
